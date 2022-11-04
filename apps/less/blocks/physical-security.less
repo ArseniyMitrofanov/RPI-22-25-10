@@ -1,0 +1,129 @@
+
+.physicalSecurity {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 110px;
+  position: relative;
+}
+
+.physicalSecurityTitle {
+  margin: 0;
+  font-size: 50px;
+  line-height: 72px;
+  font-weight: 400;
+  color: #535353;
+  letter-spacing: 0.6px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.physicalSecurityDescription {
+  margin: 0;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.2px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.physicalSecurityDescription span {
+  color: #f65151;
+}
+
+.physicalSecurityLink {
+  .link-style;
+  font-size: 16px;
+  line-height: 22px;
+  color: #676767;
+  letter-spacing: 0.3px;
+
+  &:hover,
+  &:active {
+    color: #ffffff;
+    background-color: rgb(185, 185, 185);
+  }
+}
+
+.physicalSecurityLink {
+  font-weight: 400;
+  margin: 0 auto;
+
+  background-color: #ffffff;
+  border: 1px solid rgb(185, 185, 185);
+  padding: 14px 24px;
+  border-radius: 31px;
+}
+
+.physicalSecurity::after {
+  content: "";
+  height: 1px;
+  background-color: rgb(185, 185, 185);
+  position: absolute;
+  width: 270px;
+  bottom: -60px;
+  left: 80px;
+}
+
+@media (min-width: @tablet-width) {
+  .physicalSecurityTitle {
+    font-size: 52px;
+  }
+
+  .physicalSecurityDescription {
+    font-size: 24px;
+    text-align: right;
+    width: 90%;
+  }
+
+  .physicalSecurityLink {
+    padding: 16px 30px 22px 29px;
+  }
+
+  .physicalSecurity::after {
+    width: 460px;
+    left: 150px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .physicalSecurity {
+    margin-bottom: 39px;
+    text-align: left;
+    position: static;
+  }
+
+  .physicalSecurityTitle {
+    margin: 0 auto;
+    font-size: 60px;
+    margin-bottom: 10px;
+    padding-right: 21px;
+    text-align: right;
+  }
+
+  .physicalSecurityDescription {
+    width: 627px;
+    margin: 0 auto;
+    padding-right: 5px;
+    margin-bottom: 25px;
+    margin-left: 20%;
+  }
+
+  .physicalSecurityLink {
+    margin-left: 55.3%;
+  }
+
+  .physicalSecurityLink::before {
+    content: "";
+    width: 58.1%;
+    height: 1px;
+    position: absolute;
+    top: 1073px;
+    left: 0;
+    background-color: #bfbfbf;
+    z-index: -1;
+  }
+
+  .physicalSecurity::after {
+    display: none;
+  }
+}

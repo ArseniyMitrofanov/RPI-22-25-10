@@ -1,0 +1,50 @@
+.socialList {
+  .list-style;
+}
+
+.socialLink {
+  display: none;
+}
+
+@media (min-width: @desktop-width) {
+  .socialLink {
+    display: block;
+    width: 22px;
+    height: 22px;
+
+    position: absolute;
+    top: 0;
+    right: 31px;
+  }
+
+  .socialItem {
+    margin-bottom: 10px;
+  }
+
+  .fa-google-plus-square,
+  .fa-facebook,
+  .fa-twitter-square {
+    font-size: 22px;
+    color: #5c5c5c;
+    background-color: #ffffff;
+
+    &:hover,
+    &:active {
+      color: #5f2f6a;
+    }
+  }
+
+  .social_link-google {
+    top: 14px;
+  }
+
+  .social_link-facebook {
+    top: 52px;
+  }
+
+  .social_link-twitter {
+    top: 89px;
+  }
+}
+
+

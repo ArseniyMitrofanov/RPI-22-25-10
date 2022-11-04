@@ -1,0 +1,80 @@
+.anyDevices {
+  width: 440px;
+
+  text-align: left;
+  margin-bottom: 150px;
+  position: relative;
+}
+
+.anyDevicesTitle {
+  margin: 0;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #535353;
+  letter-spacing: 0.2px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.anyDevicesDescription {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.15px;
+  margin-bottom: 30px;
+}
+
+.anyDevices::after {
+  content: "";
+  height: 1px;
+  background-color: rgb(185, 185, 185);
+  position: absolute;
+  width: 270px;
+  bottom: -80px;
+  left: 80px;
+}
+
+@media (min-width: @tablet-width) {
+  .anyDevicesTitle {
+    text-align: left;
+  }
+
+  .anyDevices::after {
+    width: 460px;
+    left: 150px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .anyDevices {
+    text-align: right;
+    margin-left: 33.43%;
+    margin-bottom: 231px;
+    position: static;
+  }
+
+  .anyDevicesTitle {
+    text-align: right;
+  }
+
+  .anyDevicesDescription {
+    position: relative;
+    margin-right: 5px;
+  }
+
+  .anyDevices::before {
+    content: "";
+    position: absolute;
+    width: 77.8%;
+    height: 1px;
+    right: 0;
+    bottom: 454px;
+    background-color: #b9b9b9;
+    z-index: -1;
+  }
+
+  .anyDevices::after {
+    display: none;
+  }
+}

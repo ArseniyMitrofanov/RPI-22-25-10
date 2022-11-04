@@ -1,0 +1,191 @@
+.main-nav {
+  width: 380px;
+  position: relative;
+  min-height: 51px;
+  margin: 0 auto;
+}
+
+.mainNavToggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  display: block;
+  width: 60px;
+  height: 50px;
+
+  background-color: #625583;
+
+  cursor: pointer;
+  border: none;
+
+  &:active {
+    background-color: #858688;
+  }
+}
+
+.mainNavClosed .mainNavToggle::before {
+  content: "";
+
+  position: absolute;
+  top: 17px;
+  left: 9px;
+
+  width: 44px;
+  height: 2px;
+
+  background-color: #ffffff;
+  box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff;
+}
+
+.mainNavClosed .mainNavToggle:active::before {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 0 0 rgba(255, 255, 255, 0.3), 0 16px 0 0 rgba(255, 255, 255, 0.3);
+}
+
+.mainNavOpened .mainNavToggle {
+  top: 0;
+  right: auto;
+  left: 0;
+
+  &::before,
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 24px;
+    left: 10px;
+
+    width: 40px;
+    height: 2px;
+
+    background-color: #ffffff;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:active::before,
+  &:active::after {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+@media (max-width: @mobile-only) {
+  .mainNavClosed .siteListItem {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  .mainNavClosed .siteListLinkActive {
+    text-align: center;
+    padding-right: 70px;
+    padding-left: 70px;
+  }
+
+  .mainNavClosed .userListItem {
+    display: none;
+  }
+
+  .mainNavClosed .langListItem {
+    display: none;
+  }
+
+  .mainNavOpened .main-nav {
+    position: relative;
+  }
+
+  .mainNavOpened .mainNavWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 60px;
+    z-index: 10;
+
+    min-height: 50vh;
+
+    background-color: #eeeeee;
+  }
+
+  .mainNavOpened .langList {
+    position: absolute;
+    top: 359px;
+    right: 0;
+    left: 60px;
+    z-index: 10;
+
+    background-color: #eeeeee;
+  }
+
+  .mainNavOpened .mainNavWrapper::before,
+  .mainNavOpened .langList::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    width: 7px;
+    height: 100%;
+
+    box-shadow: inset 4px 0 7px -2px rgba(0, 0, 0, 0.4);
+  }
+
+  .main-nav-nojs .mainNavToggle {
+    display: none;
+  }
+
+  .main-nav-nojs .mainNavWrapper,
+  .main-nav-nojs .langList {
+    position: static;
+    min-height: 0;
+  }
+
+  .main-nav-nojs .siteListItem,
+  .main-nav-nojs .userListItem,
+  .main-nav-nojs .langListItem {
+    display: block;
+  }
+
+  .main-nav-nojs .userListItem {
+    padding: 13px 58px;
+  }
+
+  .main-nav-nojs .mainNavWrapper::before,
+  .main-nav-nojs .langList::before {
+    display: none;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .main-nav {
+    min-height: 0;
+    width: 100%;
+  }
+
+  .mainNavToggle {
+    display: none;
+  }
+
+  .mainNavWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .mainNavWrapper {
+    margin-top: -30px;
+    justify-content: flex-end;
+  }
+}
